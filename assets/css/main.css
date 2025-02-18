@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-RegularItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('@/assets/fonts/product-sans/ProductSans-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: "Product Sans", sans-serif;
+}
