@@ -5,28 +5,11 @@
         <NuxtPage />
       </div>
     </header>
+    <TheImageGrid class="grid" />
   </div>
 </template>
 
-<style lang="scss">
-:root {
-  --header-height: 24vh;
-  --content-margin-inline: 7.5%;
-}
-
-@media screen and (min-width: 768px) {
-  :root {
-    --header-height: 29.4vh;
-    --content-margin-inline: 11.25%;
-  }
-}
-
-@media screen and (min-width: 1652px) {
-  :root {
-    --content-margin-inline: auto;
-  }
-}
-
+<style lang="scss" scoped>
 .page {
   min-height: 100dvh;
   background-color: #FFF;
@@ -40,9 +23,22 @@
   }
 
   .content {
-    margin-top: calc(0.4 * var(--header-height));
-    margin-inline: var(--content-margin-inline);
+    position: absolute;
+    top: calc(0.4 * var(--header-height));
+    inset-inline: 0;
+    width: calc(100% - (var(--content-margin-inline) * 2));
     max-width: 1280px;
+    margin-inline: var(--content-margin-inline);
+  }
+
+  .grid {
+    position: absolute;
+    top: calc(0.85 * var(--header-height));
+    inset-inline: 0;
+    width: calc(100% - ((var(--content-margin-inline) * 2) + 9.2vw));
+    max-width: 1128px;
+    margin-inline: auto;
+    padding-bottom: calc(0.3 * var(--header-height));
   }
 }
 </style>

@@ -90,6 +90,39 @@
 
 :root {
   --primary-color: #2b3e59;
+  --header-height: 29.4vh;
+  --content-margin-inline: 7.5%;
+  --input-padding: 16px;
+  --input-padding-left: 54px;
+  --search-icon-size: 16px;
+  --images-grid-column: 1fr;
+}
+
+@media screen and (min-width: 640px) {
+  :root {
+    --images-grid-column: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --content-margin-inline: 11.25%;
+    --input-padding: 24px;
+    --input-padding-left: 72px;
+    --search-icon-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --images-grid-column: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1652px) {
+  :root {
+    --content-margin-inline: auto;
+  }
 }
 
 * {

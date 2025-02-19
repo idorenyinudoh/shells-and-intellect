@@ -7,21 +7,7 @@
   </div>
 </template>
 
-<style lang="scss">
-:root {
-  --input-padding: 16px;
-  --input-padding-left: 54px;
-  --search-icon-size: 16px;
-}
-
-@media screen and (min-width: 768px) {
-  :root {
-    --input-padding: 24px;
-    --input-padding-left: 72px;
-    --search-icon-size: 20px;
-  }
-}
-
+<style lang="scss" scoped>
 .input-container {
   position: relative;
   display: flex;
