@@ -7,5 +7,10 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt'
-  ]
+  ],
+  runtimeConfig: {
+    public: {
+      unsplashAccessKey: process.env.UNSPLASH_ACCESS_KEY
+    }
+  }
 })

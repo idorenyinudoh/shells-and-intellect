@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import type { Image } from '~/utils/types';
+
+const store = useImagesStore()
+const config = useRuntimeConfig()
+
+const { data } = useAsyncData('images', () => $fetch<{
+  results: Image[],
+  total: number,
+  total_pages: number
+}>('/search/photos', {
+  baseURL: 'https://api.unsplash.com/',
+  headers: {
+    'Authorization': `Client-ID ${config.public.unsplashAccessKey}`
+  },
+  params: {
+    query: 'african',
+    per_page: 8
+  }
+}))
+
+if (data.value) {
+  store.$reset()
+  data.value.results.forEach(image => store.addImage(image))
+}
+</script>
+
 <template>
   <div>
     <div class="input-container">
