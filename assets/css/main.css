@@ -88,6 +88,10 @@
   font-display: swap;
 }
 
+:root {
+  --primary-color: #2b3e59;
+}
+
 * {
   font-family: "Product Sans", sans-serif;
   margin: 0;
