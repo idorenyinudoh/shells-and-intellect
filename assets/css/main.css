@@ -88,6 +88,7 @@
   font-display: swap;
 }
 
-body {
+* {
   font-family: "Product Sans", sans-serif;
+  margin: 0;
 }
