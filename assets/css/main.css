@@ -144,6 +144,11 @@
   margin: 0;
 }
 
+.freeze {
+  position: fixed;
+  width: 100%;
+}
+
 @keyframes image-pulse {
   0% {
     background-color: #F6F6F6;

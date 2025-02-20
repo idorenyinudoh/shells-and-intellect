@@ -1,6 +1,21 @@
 <script setup lang="ts">
 const store = useImagesStore()
 const images = computed(() => store.images)
+
+store.$subscribe((mutation, state) => {
+  if (state.modalImage) {
+    const windowScroll = window.scrollY
+
+    document.body.classList.add('freeze')
+    document.body.style.top = `-${windowScroll}px`
+  } else {
+    const windowScroll = Math.abs(parseInt(document.body.style.top))
+
+    document.body.classList.remove('freeze')
+    document.body.style.top = '0'
+    window.scrollTo(0, windowScroll)
+  }
+})
 </script>
 
 <template>
