@@ -3,34 +3,49 @@ import type { Image } from '~/utils/types';
 
 const store = useImagesStore()
 const config = useRuntimeConfig()
+const router = useRouter()
 
-const { data } = useAsyncData('images', () => $fetch<{
-  results: Image[],
-  total: number,
-  total_pages: number
-}>('/search/photos', {
-  baseURL: 'https://api.unsplash.com/',
-  headers: {
-    'Authorization': `Client-ID ${config.public.unsplashAccessKey}`
-  },
-  params: {
-    query: 'african',
-    per_page: 8
-  }
-}))
+const fetchImages = async () => {
+  const res = await $fetch<{
+    results: Image[],
+    total: number,
+    total_pages: number
+  }>('/search/photos', {
+    baseURL: 'https://api.unsplash.com/',
+    headers: {
+      'Authorization': `Client-ID ${config.public.unsplashAccessKey}`
+    },
+    params: {
+      query: 'african',
+      per_page: 8
+    }
+  })
 
-if (data.value) {
   store.$reset()
-  data.value.results.forEach(image => store.addImage(image))
+  res.results.forEach(image => store.addImage(image))
+}
+
+useHead({
+  title: 'Home'
+})
+
+onMounted(() => {
+  fetchImages()
+})
+
+const input = ref('')
+const search = () => {
+  store.$reset()
+  router.push({ path: '/search', query: { q: input.value } })
 }
 </script>
 
 <template>
   <div>
-    <div class="input-container">
+    <form class="input-container" @submit.prevent="search">
       <img src="~/assets/icons/search.svg" alt="search">
-      <input type="text" placeholder="Search for a photo">
-    </div>
+      <input v-model="input" type="text" placeholder="Search for a photo" required>
+    </form>
   </div>
 </template>
 
