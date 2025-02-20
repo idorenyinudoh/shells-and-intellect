@@ -1,13 +1,31 @@
+<script setup lang="ts">
+import type { Image } from '~/utils/types';
+
+const props = defineProps<{
+  images: Image[] | []
+}>()
+
+const imageGroups = computed(() => {
+  const groups = [];
+
+  if (props.images.length > 0) {
+    groups.push(props.images.slice(0, 3));
+    groups.push(props.images.slice(3, 5));
+    groups.push(props.images.slice(5, 8));
+  } else {
+    groups.push(new Array(3).fill(null));
+    groups.push(new Array(2).fill(null));
+    groups.push(new Array(3).fill(null));
+  }
+
+  return groups;
+});
+</script>
+
 <template>
   <div class="images-container">
-    <div class="image-container">
-      <BaseImage v-for="(_, index) in 3" :key="index" class="image" />
-    </div>
-    <div class="image-container">
-      <BaseImage v-for="(_, index) in 2" :key="index" class="image" />
-    </div>
-    <div class="image-container">
-      <BaseImage v-for="(_, index) in 3" :key="index" class="image" />
+    <div class="image-container" v-for="(group, groupIndex) in imageGroups" :key="groupIndex">
+      <BaseImage v-for="(image, index) in group" :key="`${groupIndex}${index}`" :image="image" class="image" />
     </div>
   </div>
 </template>

@@ -4,5 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css'
-  ]
+  ],
+  modules: [
+    '@pinia/nuxt'
+  ],
+  runtimeConfig: {
+    public: {
+      unsplashAccessKey: process.env.UNSPLASH_ACCESS_KEY
+    }
+  }
 })

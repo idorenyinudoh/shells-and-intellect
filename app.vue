@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const store = useImagesStore()
+const images = computed(() => store.images)
+</script>
+
 <template>
   <div class="page">
     <header>
@@ -5,7 +10,8 @@
         <NuxtPage />
       </div>
     </header>
-    <TheImageGrid class="grid" />
+    <TheImageGrid :images="images" class="grid" />
+    <TheImageModal />
   </div>
 </template>
 
