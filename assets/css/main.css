@@ -97,6 +97,12 @@
   --search-icon-size: 16px;
   --images-grid-column: 1fr;
   --heading-font-size: 28px;
+  --modal-width: 70%;
+  --modal-height: 75%;
+  --modal-close-button-size: 20px;
+  --modal-text-padding: 22px;
+  --modal-author-name-size: 18px;
+  --modal-author-location-size: 14px;
 }
 
 @media screen and (min-width: 640px) {
@@ -112,6 +118,12 @@
     --input-padding-left: 72px;
     --search-icon-size: 20px;
     --heading-font-size: 40px;
+    --modal-width: 75%;
+    --modal-height: 82.35%;
+    --modal-close-button-size: 24px;
+    --modal-text-padding: 45px;
+    --modal-author-name-size: 22px;
+    --modal-author-location-size: 16px;
   }
 }
 
@@ -130,4 +142,16 @@
 * {
   font-family: "Product Sans", sans-serif;
   margin: 0;
+}
+
+@keyframes image-pulse {
+  0% {
+    background-color: #F6F6F6;
+  }
+  50% {
+    background-color: #F2F2F2;
+  }
+  100% {
+    background-color: #F6F6F6;
+  }
 }

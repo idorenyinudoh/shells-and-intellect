@@ -4,11 +4,17 @@ import type { Image } from '~/utils/types';
 const props = defineProps<{
   image?: Image
 }>()
+
+const store = useImagesStore()
+
+const setImageAsModalImage = () => {
+  store.openModal(props.image!)
+}
 </script>
 
 <template>
   <div class="image">
-    <img v-if="props.image" :src="props.image?.urls.small" :alt="props.image?.alt_description">
+    <img v-if="props.image" :src="props.image?.urls.small" :alt="props.image?.alt_description" @click="setImageAsModalImage" />
     <div v-if="props.image" class="overlay" />
     <div class="texts">
       <p>{{ props.image?.user.name }}</p>
@@ -88,18 +94,6 @@ const props = defineProps<{
     p:last-of-type:empty {
       width: 30%;
     }
-  }
-}
-
-@keyframes image-pulse {
-  0% {
-    background-color: #F6F6F6;
-  }
-  50% {
-    background-color: #F2F2F2;
-  }
-  100% {
-    background-color: #F6F6F6;
   }
 }
 

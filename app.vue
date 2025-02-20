@@ -11,6 +11,7 @@ const images = computed(() => store.images)
       </div>
     </header>
     <TheImageGrid :images="images" class="grid" />
+    <TheImageModal />
   </div>
 </template>
 

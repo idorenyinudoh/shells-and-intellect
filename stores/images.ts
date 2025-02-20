@@ -11,6 +11,16 @@ export const useImagesStore = defineStore('images', () => {
   const $reset = () => {
     images.value = [];
   }
+
+  const modalImage = ref<Image | null>(null);
+
+  const openModal = (image: Image) => {
+    modalImage.value = image;
+  }
   
-  return { images, addImage, $reset };
+  const closeModal = () => {
+    modalImage.value = null;
+  }
+  
+  return { images, addImage, $reset, modalImage, openModal, closeModal };
 });
